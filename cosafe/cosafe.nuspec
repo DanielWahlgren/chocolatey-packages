@@ -7,9 +7,6 @@
     <title>CoSafe Warning System</title>
     <owners>Cosafe Technology AB</owners>
     <authors>Cosafe Technology AB</authors>
-    <licenseUrl></licenseUrl>
-    <projectUrl></projectUrl>
-    <iconUrl></iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
 Designed by crisis management experts and customized for building safe, resilient, and sustainable organizations.
@@ -21,7 +18,6 @@ Cosafe is the powerful and user-friendly critical communication platform for fas
     <copyright />
     <tags></tags>
     <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/cosafe</packageSourceUrl>
-    <projectSourceUrl></projectSourceUrl>
     <docsUrl>https://cosafe.com/product/</docsUrl>
   </metadata>
   <files>
