@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>cosafe</id>
-    <version></version>
+    <version>1.3.2.20230905</version>
     <title>CoSafe Warning System</title>
     <owners>DanielWahlgren-Eventful</owners>
     <authors>Cosafe Technology AB</authors>
@@ -17,7 +17,7 @@ Cosafe is the powerful and user-friendly critical communication platform for fas
     <summary>The new way to alert, manage and prevent critical events.</summary>
     <releaseNotes></releaseNotes>
     <copyright />
-    <tags>crisis managemenet,alerts</tags>
+    <tags>crisis-managemenet alerts</tags>
     <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/cosafe</packageSourceUrl>
     <docsUrl>https://cosafe.com/product/</docsUrl>
   </metadata>
