@@ -26,5 +26,3 @@ Safe Exam Browser is a web browser environment to carry out e-assessments safely
     <file src="tools\**" target="tools" />
   </files>
 </package>
-https://github.com/SafeExamBrowser/seb-win-refactoring/blob/bbfa720b21e316440eed3bf619c38954a0f29d4a/SetupBundle/Resources/Logo.png
-https://raw.githubusercontent.com/SafeExamBrowser/seb-win-refactoring/master/SetupBundle/Resources/Logo.png
