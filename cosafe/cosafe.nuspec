@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>cosafe</id>
+    <version></version>
+    <title>CoSafe Warning System</title>
+    <owners>Cosafe Technology AB</owners>
+    <authors>Cosafe Technology AB</authors>
+    <licenseUrl></licenseUrl>
+    <projectUrl></projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+Designed by crisis management experts and customized for building safe, resilient, and sustainable organizations.
+
+Cosafe is the powerful and user-friendly critical communication platform for fast, structured and secure responses in time-sensitive issues.
+    </description>
+    <summary>The new way to alert, manage and prevent critical events.</summary>
+    <releaseNotes></releaseNotes>
+    <copyright />
+    <tags></tags>
+    <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/cosafe</packageSourceUrl>
+    <projectSourceUrl></projectSourceUrl>
+    <docsUrl>https://cosafe.com/product/</docsUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
