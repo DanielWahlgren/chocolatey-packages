@@ -1,4 +1,4 @@
-[[](https://ci.appveyor.com/api/projects/status/github/DanielWahlgren/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/DanielWahlgren/chocolatey-packages)
+[![](https://ci.appveyor.com/api/projects/status/github/DanielWahlgren/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/DanielWahlgren/chocolatey-packages)
 [Update status](https://gist.github.com/DanielWahlgren/4a29beec3d19f051dfbe76907ae5aac1)
 [![](http://transparent-favicon.info/favicon.ico)](#)
 [chocolatey/DanielWahlgren-Eventful](https://chocolatey.org/profiles/DanielWahlgren-Eventful)
