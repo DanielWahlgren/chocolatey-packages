@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>cosafe</id>
-    <version></version>
+    <version>1.3.2</version>
     <title>CoSafe Warning System</title>
     <owners>Cosafe Technology AB</owners>
     <authors>Cosafe Technology AB</authors>
