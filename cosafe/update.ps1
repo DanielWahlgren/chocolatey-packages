@@ -15,8 +15,8 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
 
-    $url = $download_page.Links | Where-Object href -match '.exe$' | ForEach-Object href | Select-Object -First 1
-    $version = ($url -split '-').Replace('.exe','')[-1]
+    $url = $download_page.Links | Where-Object href -match '.msi$' | ForEach-Object href | Select-Object -First 1
+    $version = ($url -split '-').Replace('.msi','')[-1]
 
     @{
         URL32   = $url

@@ -4,11 +4,11 @@ $ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
   packageName            = 'cosafe'
-  fileType               = 'exe'
+  fileType               = 'msi'
   url                    = ''
   checksum               = ''
   checksumType           = 'sha256'
-  silentArgs             = '/S'
+  silentArgs             = '/qn'
   validExitCodes         = @(0)
   softwareName           = 'CoSafe Warning System'
 }
