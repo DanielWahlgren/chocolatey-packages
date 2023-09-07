@@ -4,11 +4,14 @@ $ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
   packageName            = 'safeexambrowser'
-  fileType               = 'exe'
+  fileType               = 'msi'
   url                    = ''
   checksum               = ''
   checksumType           = 'sha256'
-  silentArgs             = '/install /passive /quiet /norestart'
+  url64bit               = ''
+  checksum64             = ''
+  checksumType64         = 'sha256'
+  silentArgs             = '/qn'
   validExitCodes         = @(0)
   softwareName           = 'SafeExamBrowser*'
 }
