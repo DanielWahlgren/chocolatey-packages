@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>safeexambrowser</id>
-    <version>3.5.0.2023090700</version>
+    <version>3.5.0.20230907</version>
     <title>SafeExamBrowser</title>
     <owners>DanielWahlgren-Eventful</owners>
     <authors>ETH Zurich</authors>
