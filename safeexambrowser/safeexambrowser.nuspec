@@ -22,9 +22,9 @@ Safe Exam Browser is a web browser environment to carry out e-assessments safely
     <projectSourceUrl>https://github.com/SafeExamBrowser/seb-win-refactoring</projectSourceUrl>
     <docsUrl>https://safeexambrowser.org/about_overview_en.html</docsUrl>
     <dependencies>
-      <dependency id="netfx-4.7.2" />
-      <dependency id="webview2-runtime" />
-      <dependency id="vcredist140" />
+      <dependency id="netfx-4.7.2" version="4.7.2.0" />
+      <dependency id="webview2-runtime" version="120.0.2210.121" />
+      <dependency id="vcredist140" version="14.38.33130" />
     </dependencies>
   </metadata>
   <files>
