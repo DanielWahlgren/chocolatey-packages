@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>mechpack2</id>
+    <version>2.0.0.1859</version>
+    <title>MechPack2</title>
+    <owners>DanielWahlgren-Eventful</owners>
+    <authors>MicroTech StellaData AB</authors>
+    <licenseUrl>https://www.microtechstelladata.se/programaktivering/</licenseUrl>
+    <projectUrl>https://www.microtechstelladata.se/</projectUrl>
+    <iconUrl>https://www.microtechstelladata.se/wp-content/uploads/2020/02/textmillingknapp.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+MechPack is the name of a collection of software that covers most of what you could want in the field of industrial training. With the help of illustrative, educational and interactive courses, the students can practice everything from trigonometry and drawing reading to measuring technology and CNC programming.
+    </description>
+    <summary>MedPack is an collection of training materials for trigonometry, measuring technology and CNC programming.</summary>
+    <releaseNotes>https://www.microtechstelladata.se/en/mechpack/</releaseNotes>
+    <copyright />
+    <tags>trigonometry measuring cnc programming industrial training</tags>
+    <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/mechpack2</packageSourceUrl>
+    <projectSourceUrl>https://www.microtechstelladata.se/</projectSourceUrl>
+    <docsUrl>https://www.microtechstelladata.se/en/mechpack/</docsUrl>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
