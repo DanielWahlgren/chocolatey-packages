@@ -1,6 +1,6 @@
 import-module au
 
-$releases = 'https://www.microtechstelladata.se/download/1938/?tmstv=1706602274'
+$releases = 'https://www.microtechstelladata.se/?page_id=1900'
 
 
 function global:au_SearchReplace {
