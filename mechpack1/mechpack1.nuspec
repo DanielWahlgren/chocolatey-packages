@@ -2,7 +2,7 @@
 <!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>mechpack2</id>
+    <id>mechpack1</id>
     <version>2.0.0.1859</version>
     <title>MechPack2</title>
     <owners>DanielWahlgren-Eventful</owners>
@@ -19,7 +19,7 @@ MechPack1 and MechPack2 vary slightly in their contents. Refer to your license-a
     <releaseNotes>https://www.microtechstelladata.se/en/mechpack/</releaseNotes>
     <copyright />
     <tags>trigonometry measuring cnc programming industrial training</tags>
-    <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/mechpack2</packageSourceUrl>
+    <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/mechpack1</packageSourceUrl>
     <projectSourceUrl>https://www.microtechstelladata.se/</projectSourceUrl>
     <docsUrl>https://www.microtechstelladata.se/en/mechpack/</docsUrl>
     <dependencies>
