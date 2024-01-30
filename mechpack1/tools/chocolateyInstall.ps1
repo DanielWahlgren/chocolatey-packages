@@ -5,8 +5,8 @@ $ErrorActionPreference = 'Stop'
 $packageArgs = @{
   packageName            = 'mechpack2'
   fileType               = 'exe'
-  url                    = 'https://www.microtechstelladata.se/download/1859/?tmstv=1704965288'
-  checksum               = '17d7c714c2a6bdee0d2e09875eee24274448668c03ff453d3141ca635eb6353a'
+  url                    = 'https://www.microtechstelladata.se/download/1938/?tmstv=1706602788'
+  checksum               = '17123933a0eff186821640ee5d70c6c74458f26991a1f7d2f757db5febb36c24'
   checksumType           = 'sha256'
   silentArgs             = '/verysilent /norestart'
   validExitCodes         = @(0)
