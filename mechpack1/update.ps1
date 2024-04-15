@@ -15,9 +15,8 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
 
-    $link = $download_page.Links | ? href -like '*/download/*' | % href | select -First 1
-    $dlversion = ($link -split '\?')[0] | Select-string "(\d+)" | Select-Object -ExpandProperty Matches | Select-Object -ExpandProperty Value
-    $version = "2.0.0.$dlversion"
+    [uri]$link = $download_page.Links | Where-Object href -like '*/download/*' | ForEach-Object href | Select-Object -First 1
+    $version = (($link.Fragment -split "=")[1] -split "-") -join "."
     $url32 = $link
 
     @{
