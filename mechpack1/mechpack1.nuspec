@@ -21,7 +21,7 @@ MechPack1 and MechPack2 vary slightly in their contents. Refer to your license-a
     <tags>trigonometry measuring cnc programming industrial training</tags>
     <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/mechpack1</packageSourceUrl>
     <projectSourceUrl>https://www.microtechstelladata.se/</projectSourceUrl>
-    <docsUrl>https://www.microtechstelladata.se/en/mechpack/</docsUrl>
+    <docsUrl>https://www.microtechstelladata.se/mechpack/?lang=en</docsUrl>
     <dependencies>
       <dependency id="dotnet3.5" version="3.5.20160716" />
     </dependencies>
