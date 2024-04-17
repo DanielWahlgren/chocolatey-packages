@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 $releases = 'https://www.microtechstelladata.se/?page_id=1900'
 

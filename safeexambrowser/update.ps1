@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 $releases = 'https://github.com/SafeExamBrowser/seb-win-refactoring/releases'
 

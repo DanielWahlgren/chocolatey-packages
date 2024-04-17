@@ -1,4 +1,4 @@
-import-module au
+import-module Chocolatey-AU
 
 $releases = 'https://support.cosafe.se/sv/articles/7638-cosafe-warning-system-cws'
 
