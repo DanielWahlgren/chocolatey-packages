@@ -1,6 +1,8 @@
 # AU template: https://github.com/majkinetor/au-packages-template
 
 version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
 max_jobs: 1
 image: Visual Studio 2017
 # History plugin requires complete log
@@ -13,7 +15,7 @@ branches:
 
 environment:
   # Set au version to use or omit to use the latest. Specify branch name to use development version from Github
-  au_version:
+  au_version: master
   au_push: true
   # Force test: use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
@@ -80,16 +82,11 @@ install:
 - ps: |
     git clone -q https://github.com/chocolatey-community/chocolatey-au.git $Env:TEMP/au
     . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
-
 - ps: |
     "Build info"
     '  {0,-20} {1}' -f 'SCHEDULED BUILD:', ($Env:APPVEYOR_SCHEDULED_BUILD -eq 'true')
     '  {0,-20} {1}' -f 'FORCED BUILD:'   , ($Env:APPVEYOR_FORCED_BUILD    -eq 'true')
     '  {0,-20} {1}' -f 'RE BUILD:'       , ($Env:APPVEYOR_RE_BUILD        -eq 'true')
-
-# Uncomment the below line if you are using any of the functions from chocolatey-core.extension - https://chocolatey.org/packages/chocolatey-core.extension. Ensure you also have it listed in your package's dependencies
-# - cinst chocolatey-core.extension
-    
 build_script:
 - ps: |
     $ErrorActionPreference = 'Continue'
@@ -151,6 +148,9 @@ notifications:
   on_build_success: false
   on_build_failure: false
   on_build_status_changed: false
+
+cache:
+  - '%nupkg_cache_path% -> .appveyor.yml'
 
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
