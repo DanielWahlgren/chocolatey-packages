@@ -2,6 +2,7 @@
 
 version: '{build}'
 max_jobs: 1
+image: Visual Studio 2017
 # History plugin requires complete log
 #clone_depth: 5
 branches:
@@ -43,18 +44,41 @@ environment:
   api_key:
     secure: y+HkogVsXEhRKG0rqxoTtr3PvsLjIjP5IPRcOGU+R7Do9GEHOv85P00KQI14FIg+ # https://ci.appveyor.com/tools/encrypt
 
+  #Chocolatey version we want to use when checking for updates.
+  choco_version: '2.2.2'
+  choco_version_pr: '1.2.1' # Should be kept to the version available one year ago
+  nupkg_cache_path: C:\packages
+
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
 - git config --global user.name "Chocolatey"
 - git config --global core.safecrlf false
 
 install:
+- ps: |
+    $chocoVersion = if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -eq $null) -or ($ENV:APPVEYOR_PULL_REQUEST_NUMBER -eq '')) { $Env:choco_version } else { $Env:choco_version_pr }
+    if (!(Test-Path "$env:nupkg_cache_path")) { mkdir -Force "$env:nupkg_cache_path" }
+    @{
+      'chocolatey' = $chocoVersion
+      'wormies-au-helpers' = '0.4.1'
+      'chocolatey-compatibility.extension' = '1.0.0'
+      'chocolatey-core.extension' = '1.4.0'
+      'autohotkey.portable' = '2.0.11'
+      'chocolatey-misc-helpers.extension' = '0.0.4'
+      'vt-cli' = '1.0.0'
+      'chocolatey-community-validation.extension' = '0.1.0'
+    }.GetEnumerator() | ForEach-Object {
+      if (!(Test-Path "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg")) { rm "${env:nupkg_cache_path}\$($_.Key).*.nupkg" ; Invoke-WebRequest "https://chocolatey.org/api/v2/package/$($_.Key)/$($_.Value)" -OutFile "${env:nupkg_cache_path}\$($_.Key).$($_.Value).nupkg" }
+      if ($_.Key -eq 'chocolatey') { choco upgrade $_.Key --version $_.Value --source ${env:nupkg_cache_path} --allow-downgrade --pre }
+      else { choco install $_.Key --version $_.Value --source ${env:nupkg_cache_path} --ignore-dependencies }
+    }
+    rm "$env:ChocolateyInstall\logs\*.log"
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
 - ps: $PSVersionTable
 - git --version
 - choco --version
 - ps: |
-    git clone -q https://github.com/majkinetor/au.git $Env:TEMP/au
+    git clone -q https://github.com/chocolatey-community/chocolatey-au.git $Env:TEMP/au
     . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
 
 - ps: |
@@ -70,23 +94,33 @@ build_script:
 - ps: |
     $ErrorActionPreference = 'Continue'
 
-    if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
+    . ./scripts/EventLogs.ps1
+    Clear-EventLogs
 
+    if ($Env:APPVEYOR_PROJECT_NAME  -like '*test*') { ./test_all.ps1 "random $Env:au_test_groups"; return }
+    if (($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne $null) -and ($Env:APPVEYOR_PULL_REQUEST_NUMBER -ne '')) {
+      Set-Service wuauserv -StartupType Manual
+      ./scripts/Test-RepoPackage.ps1 -CleanFiles -TakeScreenshots
+      return
+    } else {
+      # Clean the choco logs as it's quite large
+      rm "$env:ChocolateyInstall\logs\*.log"
+    }
     if ( ($Env:APPVEYOR_SCHEDULED_BUILD -ne 'true') -and ($Env:APPVEYOR_FORCED_BUILD -ne 'true') ) {
         switch -regex ($Env:APPVEYOR_REPO_COMMIT_MESSAGE)
         {
             '\[AU (.+?)\]'   { $forced = $Matches[1] }
-
             '\[PUSH (.+?)\]' {
                 $packages = $Matches[1] -split ' '
                 Write-Host "PUSHING PACKAGES: $packages"
                 foreach ($package in $packages) {
                     Write-Host ("{0}`n{1}`n" -f ('-'*60), "PACKAGE: $package")
-                    $package_dir = ls -recurse | ? { $_.Name -eq "$package.nuspec"} | select -First 1 | % Directory
+                    $package_dir = ls -recurse | Where-Object { $_.Name -eq "$package.nuspec"} | select -First 1 | ForEach-Object Directory
+
                     if (!$package_dir) { Write-Warning "Can't find package '$package'"; continue }
                     pushd $package_dir
                       if (Test-Path update.ps1 -ea 0) { ./update.ps1 }
-                      choco pack; Push-Package;
+                      choco pack; Push-Package -All;
                     popd
                 }
                 return
@@ -95,12 +129,21 @@ build_script:
     }
 
     ./update_all.ps1 -ForcedPackages $forced
-    7z a au_temp.zip $Env:TEMP\chocolatey\au\*
-
-artifacts:
-- path: update_info.xml
-- path: Update-AUPackages.md
-- path: au_temp.zip
+    Get-EventLogs * | Where-Object Source -eq 'Schannel' | fl * |  out-file eventlogs.txt
+on_finish:
+- ps: |
+    if (Test-Path $Env:TEMP\chocolatey\au) { 7z a  -mx9 au_temp.7z $Env:TEMP\chocolatey\au\* }
+    $paths = @(
+      Resolve-Path "$env:TEMP\artifacts\*" -ea 0
+      Resolve-Path "$env:ChocolateyInstall\logs\*.log" -ea 0
+      'au_temp.7z'
+      'update_info.xml'
+      'Update-AUPackages.md'
+      'Update-History.md'
+      'eventlogs.txt'
+    )
+    $paths | Where-Object { Test-Path $_ } | ForEach-Object { Push-AppveyorArtifact $_ }
+#- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 notifications:
 - provider: Email
