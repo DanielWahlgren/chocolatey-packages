@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>onenote.classnotebook</id>
+    <version>3.5.0</version>
+    <title>OneNote Class Notebook Add-in</title>
+    <owners>DanielWahlgren-Eventful</owners>
+    <authors>Microsoft</authors>
+    <licenseUrl>https://www.microsoft.com/en-us/servicesagreement/</licenseUrl>
+    <projectUrl>https://www.onenote.com/classnotebook</projectUrl>
+    <iconUrl></iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+This new free add-in for the OneNote desktop (2013 or 2016) is designed to help teachers save time and be even more efficient with their Class Notebooks. The add-in includes page and section distribution and quick review of student work.
+    </description>
+    <summary>OneNote Class Notebooks have a personal workspace for every student, a content library for handouts, and a collaboration space for lessons and creative activities.</summary>
+    <releaseNotes>https://www.microsoft.com/en-us/download/details.aspx?id=51934</releaseNotes>
+    <copyright />
+    <tags>exams testing security</tags>
+    <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/onenote.classnotebook</packageSourceUrl>
+    <projectSourceUrl>https://www.microsoft.com/en-us/download/details.aspx?id=51934</projectSourceUrl>
+    <docsUrl>https://www.onenote.com/classnotebook</docsUrl>
+    <dependencies>
+      <dependency id="netfx-4.8" version="4.8.0.20220524" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
