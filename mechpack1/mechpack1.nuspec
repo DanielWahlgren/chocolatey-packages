@@ -17,7 +17,7 @@ MechPack1 and MechPack2 vary slightly in their contents. Refer to your license-a
     </description>
     <summary>MedPack is an collection of training materials for trigonometry, measuring technology and CNC programming.</summary>
     <releaseNotes>https://www.microtechstelladata.se/en/mechpack/</releaseNotes>
-    <copyright>2024<copyright>
+    <copyright>2024</copyright>
     <tags>trigonometry measuring cnc programming industrial training</tags>
     <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/mechpack1</packageSourceUrl>
     <projectSourceUrl>https://www.microtechstelladata.se/</projectSourceUrl>

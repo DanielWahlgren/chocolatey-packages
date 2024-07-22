@@ -16,7 +16,7 @@ This new free add-in for the OneNote desktop (2013 or 2016) is designed to help 
     </description>
     <summary>OneNote Class Notebooks have a personal workspace for every student, a content library for handouts, and a collaboration space for lessons and creative activities.</summary>
     <releaseNotes>https://www.microsoft.com/en-us/download/details.aspx?id=51934</releaseNotes>
-    <copyright>2024<copyright>
+    <copyright>2024</copyright>
     <tags>exams testing security</tags>
     <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/onenote.classnotebook</packageSourceUrl>
     <projectSourceUrl>https://www.microsoft.com/en-us/download/details.aspx?id=51934</projectSourceUrl>
