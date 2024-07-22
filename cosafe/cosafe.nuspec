@@ -16,7 +16,7 @@ Cosafe is the powerful and user-friendly critical communication platform for fas
     </description>
     <summary>The new way to alert, manage and prevent critical events.</summary>
     <releaseNotes></releaseNotes>
-    <copyright>2024</copyright>
+    <copyright>2024 Cosafe Technology AB</copyright>
     <tags>crisis-managemenet alerts</tags>
     <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/cosafe</packageSourceUrl>
     <docsUrl>https://cosafe.com/product/</docsUrl>
