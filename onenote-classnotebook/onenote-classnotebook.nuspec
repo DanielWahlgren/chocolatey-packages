@@ -9,7 +9,7 @@
     <authors>Microsoft</authors>
     <licenseUrl>https://www.microsoft.com/en-us/servicesagreement/</licenseUrl>
     <projectUrl>https://www.onenote.com/classnotebook</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/DanielWahlgren/chocolatey-packages/8c8c033e15be2f92085f6e47fa9f0a115ae79bce/icons/onenote-classnotebook.jpg</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/DanielWahlgren/chocolatey-packages/2f117d1abde520984fa47904cb73d4026de8fe12/icons/onenote-classnotebook.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>
 This new free add-in for the OneNote desktop (2013 or 2016) is designed to help teachers save time and be even more efficient with their Class Notebooks. The add-in includes page and section distribution and quick review of student work.
@@ -20,7 +20,9 @@ This new free add-in for the OneNote desktop (2013 or 2016) is designed to help 
     <tags>collaboration lessons</tags>
     <packageSourceUrl>https://github.com/DanielWahlgren/chocolatey-packages/tree/master/onenote.classnotebook</packageSourceUrl>
     <docsUrl>https://www.onenote.com/classnotebook</docsUrl>
-    <dependencies />
+    <dependencies>
+      <dependency id="netfx-4.8" version="4.8.0.20220524" />
+    </dependencies>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
