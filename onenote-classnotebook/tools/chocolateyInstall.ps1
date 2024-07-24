@@ -9,7 +9,7 @@ $packageArgs = @{
   checksum               = '1faf77b35845fffb99a8193ba78d4ef123b00f8305704bc3acd75178ed5eee5c'
   checksumType           = 'sha256'
   silentArgs             = '/quiet /norestart REINSTALL=`"ALL`" REINSTALLMODE=`"vomus`" REBOOT=`"ReallySuppress`" UILevel=`"2`"'
-  validExitCodes         = @(0)
+  validExitCodes         = @(0) 
   softwareName           = 'OneNote Class Notebook*'
 }
 Install-ChocolateyPackage @packageArgs
