@@ -1,3 +1,8 @@
+## Apologies if this repo doesn't get the love it deserves. I have changed employment and no longer need these for myself.
+I have left AppVeyor running, but if anything breaks, feel free to contact me to transfer ownership of these packages.
+
+
+
 [![](https://ci.appveyor.com/api/projects/status/github/DanielWahlgren/chocolatey-packages?svg=true)](https://ci.appveyor.com/project/DanielWahlgren/chocolatey-packages)
 [Update status](https://gist.github.com/DanielWahlgren/4a29beec3d19f051dfbe76907ae5aac1)
 [![](http://transparent-favicon.info/favicon.ico)](#)
